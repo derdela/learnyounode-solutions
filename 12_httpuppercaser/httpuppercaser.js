@@ -5,7 +5,7 @@ http.createServer(function (request, response) {
           return response.end('send me a POST\n');
 	}
 	
-	var map = require('through2-map')
+	var map = require('through2-map');
 	request.pipe(map(function (chunk) {
 		return chunk.toString().toUpperCase();
 	})).pipe(response);
